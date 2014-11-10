@@ -1,0 +1,8 @@
+#!/bin/bash
+
+PROGRAM_HOME=/data/program
+
+cd $PROGRAM_HOME
+rm -f maven
+ln -s apache-maven-2.2.1 maven
+

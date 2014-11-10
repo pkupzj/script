@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [ -z $1 ];then
+	echo "workonline [IP]"
+	echo "example:workonline 24"
+	exit
+fi
+
+bin=`dirname "$0"`
+bin=`cd "$bin"; pwd`
+. "$bin"/conf.sh
+
+
+IP=10.8.64.$1
+
+
+#echo "$IP"
+ssh $LOGIN_USER@$IP
+
+

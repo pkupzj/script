@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [ -z $1 ];then
+	echo "example:sshwork 24"
+	echo "means ssh LOGIN_USER@10.8.64.24 , LOGIN_USER is defined in conf.sh"
+	exit
+fi
+
+bin=`dirname "$0"`
+bin=`cd "$bin"; pwd`
+. "$bin"/conf.sh
+
+
+IP=10.59.0.$1
+
+
+#echo "$IP"
+#ssh $LOGIN_USER@$IP
+ssh root@$IP
+
+

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ -z $1 ];then
+	echo "rootonline [IP]"
+	echo "example:rootonline 24"
+	exit
+fi
+IP=10.8.64.$1
+
+
+#echo "$IP"
+ssh root@$IP
+
+

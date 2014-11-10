@@ -1,0 +1,26 @@
+#!/bin/bash
+
+M2_HOME=/home/zijian/.m2
+
+
+if [ -z $1 ];then
+     echo "change maven settings to orgin"
+     cp $M2_HOME/settings.xml.origin $M2_HOME/settings.xml
+elif [ $1 = "jw" ];then
+     echo "change maven settings to jingwei"
+     cp $M2_HOME/settings.xml.jingwei $M2_HOME/settings.xml
+elif [ $1 = "xz" ];then
+     echo "change maven settings to xiaozhao"
+     cp $M2_HOME/settings.xml.xiaozhao $M2_HOME/settings.xml
+elif [ $1 = "mxz" ];then
+     echo "change maven settings to mount xiaozhao"
+     cp $M2_HOME/settings.xml.xiaozhao_m $M2_HOME/settings.xml
+elif [ $1 = "mix" ];then
+     echo "change maven settings to mix xiaozhao and jingwei"
+     cp $M2_HOME/settings.xml.mix $M2_HOME/settings.xml
+else
+     echo "smvn [OPTION]"
+     echo "example:smvn jw"
+     exit
+fi
+

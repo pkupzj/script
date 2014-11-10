@@ -1,0 +1,17 @@
+#!/usr/bin/expect -f
+
+set user zijian.pan
+set password Zijian@rr
+
+if { [llength $argv] == 2 } {
+	set user [lindex $argv 0]
+        set password [lindex $argv 1]
+}
+
+set timeout 60
+spawn kinit $user
+expect "@XIAONEI.OPI.COM:"
+send "$password\r"
+interact
+#expect eof
+#exit

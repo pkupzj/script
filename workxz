@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [ -z $1 ];then
+	echo "workxz [IP]"
+	echo "example:workxz 24"
+	exit
+fi
+
+bin=`dirname "$0"`
+bin=`cd "$bin"; pwd`
+. "$bin"/conf.sh
+
+
+IP=10.3.17.$1
+
+
+#echo "$IP"
+ssh $LOGIN_USER@$IP
+
+
